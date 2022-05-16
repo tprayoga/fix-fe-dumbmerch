@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useMutation } from "react-query";
 import { API } from "../../config/api";
+import Navbar from "../navbar/Navbar";
+
 import { Button, Col } from "react-bootstrap";
 
 function AddCategory() {
@@ -39,6 +41,7 @@ function AddCategory() {
 
   return (
     <Col>
+    <Navbar/>
       <form onSubmit={(e) => handleSubmit.mutate(e)}>
         <input className="input mt-4" type="text" name="category" placeholder="Category Name" onChange={handleChange} value={category}></input>
         <div className="d-grid gap-2 mt-4">
