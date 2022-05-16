@@ -78,9 +78,6 @@ body {
   color: black !important;
 }
 
-.light-theme .sub-headline {
-  color: black !important;
-}
 .light-theme .nav-link {
   color: black !important;
 }
@@ -103,4 +100,37 @@ body {
 .status-transaction-failed {
   background-color: red !important ;
   text-transform: capitalize;
+}
+
+.light-theme .input {
+  width: 100%;
+  background: rgba(253, 0, 0, 0.25);
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #000000;
+}
+.light-theme .main {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 76px;
+  color: #000000;
+}
+.light-theme .sub {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: rgb(252, 0, 0);
+}
+.light-theme .form input {
+  background: rgba(0, 30, 255, 0.25);
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+  color: #ff0000;
 }
