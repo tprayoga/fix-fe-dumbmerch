@@ -37,23 +37,23 @@ const Profile = () => {
             </Col>
             <Col className="col-sm-12 col-md-12 col-lg-3 mt-5">
               <div className="mb-3">
-                <h1 className="profile fw-bold">Name</h1>
+                <h1 id="profile" className="profile fw-bold">Name</h1>
                 <p>{state.user.name}</p>
               </div>
               <div className="mb-3">
-                <h1 className="profile fw-bold">Email</h1>
+                <h1 id="profile" className="profile fw-bold">Email</h1>
                 <p>{state.user.email}</p>
               </div>
               <div className="mb-3">
-                <h1 className="profile fw-bold">Phone</h1>
+                <h1 id="profile" className="profile fw-bold">Phone</h1>
                 <p>+628237437847</p>
               </div>
               <div className="mb-3">
-                <h1 className="profile fw-bold">Gender</h1>
+                <h1 id="profile" className="profile fw-bold">Gender</h1>
                 <p>Male</p>
               </div>
               <div className="mb-3">
-                <h1 className="profile fw-bold">Address</h1>
+                <h1 id="profile" className="profile fw-bold">Address</h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's </p>
               </div>
             </Col>

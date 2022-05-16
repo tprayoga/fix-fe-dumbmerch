@@ -81,7 +81,7 @@ body {
 .light-theme .nav-link {
   color: black !important;
 }
-.light-theme .profile{
+.light-theme #profile{
   color: rgb(44, 42, 42) !important;
 }
 
