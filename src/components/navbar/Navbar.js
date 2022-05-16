@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import Merch from "../../assets/frame-kecil.png";
 import { UserContext } from "../../context/userContext";
-import { NavLink, useNavigate, Nav } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 const Navbar = () => {
   const [state, dispatch] = useContext(UserContext);
