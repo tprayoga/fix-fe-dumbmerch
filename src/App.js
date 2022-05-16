@@ -43,7 +43,7 @@ function App() {
       navigate("/login");
     } else {
       if (state.user.status === "admin") {
-        navigate("/user-complain");
+        navigate("/admin-complain");
       } else if (state.user.status === "customer") {
         navigate("/home");
       }
