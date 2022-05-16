@@ -7,6 +7,8 @@ import { Button, Col } from "react-bootstrap";
 
 const EditProduct = function () {
   let navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
   const { id } = useParams();
 
   const [categories, setCategories] = useState([]); //Store all category data
@@ -83,12 +85,14 @@ const EditProduct = function () {
   };
 
   const handleSubmit = useMutation(async (e) => {
+    setIsLoading(true)
     try {
       e.preventDefault();
 
       // Configuration
       const config = {
         headers: {
+          Authorization: "Basic " + localStorage.token,
           "Content-type": "multipart/form-data",
         },
       };
@@ -110,9 +114,11 @@ const EditProduct = function () {
         formData,
         config
       );
+      setIsLoading(false)
       navigate("/product");
       console.log(response.data);
     } catch (error) {
+      setIsLoading(false)
       console.log(error);
     }
   });
@@ -183,9 +189,15 @@ const EditProduct = function () {
           value={form?.qty}
         ></input>
         <div className="d-grid gap-2 mt-4">
-          <Button type="submit" variant="success" size="md">
-            Save
-          </Button>
+        {!isLoading ? (
+            <Button className="blinkers" type="submit" variant="success" size="md">
+              Edit
+            </Button>
+          ) : (
+            <Button className="blink" type="submit" variant="success" size="md">
+              Tunggu Bos .... ..... .... .... ... ...
+            </Button>
+          )}
         </div>
       </form>
     </Col>
