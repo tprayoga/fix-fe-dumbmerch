@@ -81,6 +81,10 @@ body {
 .light-theme .nav-link {
   color: black !important;
 }
+.light-theme .profile{
+  color: rgb(44, 42, 42) !important;
+}
+
 
 .tabel-transaction {
   background-color: #212529;
