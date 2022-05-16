@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col,Button } from "react-bootstrap";
+import { Col, Button } from "react-bootstrap";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { API } from "../../config/api";
@@ -7,6 +7,7 @@ import Navbar from "../navbar/Navbar";
 
 const AddProducts = () => {
   let navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   // const [categories, setCategories] = useState([]); //Store all category data
   // const [categoryId, setCategoryId] = useState([]); //Save the selected category id
@@ -50,7 +51,8 @@ const AddProducts = () => {
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.type === "file" ? e.target.files : e.target.value,
+      [e.target.name]:
+        e.target.type === "file" ? e.target.files : e.target.value,
     });
 
     // Create image url for preview
@@ -61,6 +63,7 @@ const AddProducts = () => {
   };
 
   const handleSubmit = useMutation(async (e) => {
+    setIsLoading(true);
     try {
       e.preventDefault();
 
@@ -86,8 +89,10 @@ const AddProducts = () => {
       const response = await API.post("/product", formData, config);
       console.log(response);
 
+      setIsLoading(false);
       navigate("/product");
     } catch (error) {
+      setIsLoading(false);
       console.log(error);
     }
   });
@@ -97,7 +102,7 @@ const AddProducts = () => {
   // }, []);
   return (
     <Col>
-    <Navbar/>
+      <Navbar />
       <form onSubmit={(e) => handleSubmit.mutate(e)}>
         {preview && (
           <div>
@@ -112,18 +117,53 @@ const AddProducts = () => {
             />
           </div>
         )}
-        <input onChange={handleChange} type="file" id="upload" name="image" hidden />
+        <input
+          onChange={handleChange}
+          type="file"
+          id="upload"
+          name="image"
+          hidden
+        />
         <label className="file" for="upload">
           Upload File
         </label>
-        <input className="input mt-4" type="text" name="name" placeholder="Product Name" onChange={handleChange}></input>
-        <textarea className="input mt-4" name="desc" placeholder="Product Descriptions" onChange={handleChange}></textarea>
-        <input className="input mt-4" type="number" name="price" placeholder="Price" onChange={handleChange}></input>
-        <input className="input mt-4" type="number" name="qty" placeholder="Stock" onChange={handleChange}></input>
+        <input
+          className="input mt-4"
+          type="text"
+          name="name"
+          placeholder="Product Name"
+          onChange={handleChange}
+        ></input>
+        <textarea
+          className="input mt-4"
+          name="desc"
+          placeholder="Product Descriptions"
+          onChange={handleChange}
+        ></textarea>
+        <input
+          className="input mt-4"
+          type="number"
+          name="price"
+          placeholder="Price"
+          onChange={handleChange}
+        ></input>
+        <input
+          className="input mt-4"
+          type="number"
+          name="qty"
+          placeholder="Stock"
+          onChange={handleChange}
+        ></input>
         <div className="d-grid gap-2 mt-4">
-          <Button type="submit" variant="success" size="md">
-            Add
-          </Button>
+          {!isLoading ? (
+            <Button className="blinkers" type="submit" variant="success" size="md">
+              Add
+            </Button>
+          ) : (
+            <Button className="blink" type="submit" variant="success" size="md">
+              Tunggu Bos .... ..... .... .... ... ...
+            </Button>
+          )}
         </div>
       </form>
     </Col>
