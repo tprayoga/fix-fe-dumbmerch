@@ -21,3 +21,79 @@ body {
 .bg-var-green {
   background-color: var(--green) !important;
 }
+.light-theme {
+  background-color: #fff !important;
+}
+
+.light-theme .profile-content {
+  color: black !important;
+}
+.light-theme #root {
+  color: #0b0b0b !important;
+}
+.light-theme .text-navbar {
+  color: rgba(75, 75, 75, 0.8) !important;
+}
+.light-theme .card-bg {
+  background-color: rgba(134, 133, 133, 0.7) !important;
+}
+.light-theme .navbar-toggler {
+  background-color: rgba(75, 75, 75, 0.3);
+  padding: 2px 3px;
+}
+.light-theme .contact:hover {
+  background-color: rgba(134, 133, 133, 0.7) !important;
+}
+.light-theme .contact-active,
+.light-theme .chat-me,
+.light-theme .chat-other {
+  background-color: rgb(128, 124, 124);
+  color: white !important;
+}
+.light-theme .chat-me::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  border-top: 15px solid transparent;
+  border-left: 20px solid #807c7c;
+  border-bottom: 15px solid transparent;
+}
+.light-theme .chat-other::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -15px;
+  border-top: 15px solid transparent;
+  border-right: 20px solid #807c7c;
+  border-bottom: 15px solid transparent;
+}
+.light-theme .change-theme {
+  color: rgba(247, 77, 77, 1);
+}
+.light-theme .input-message {
+  color: #3d3d3d;
+}
+.light-theme .text-content-product-detail {
+  color: black !important;
+}
+
+.tabel-transaction {
+  background-color: #212529;
+  color: white;
+}
+
+.status-transaction-success {
+  background-color: green !important ;
+  text-transform: capitalize;
+}
+
+.status-transaction-pending {
+  background-color: #b6910c !important ;
+  text-transform: capitalize;
+}
+
+.status-transaction-failed {
+  background-color: red !important ;
+  text-transform: capitalize;
+}

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Merch from "../../assets/frame-kecil.png";
 import { UserContext } from "../../context/userContext";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Nav } from "react-router-dom";
 
 const Navbar = () => {
   const [state, dispatch] = useContext(UserContext);
@@ -97,6 +97,14 @@ const Navbar = () => {
                     <strong>Logout</strong>
                   </NavLink>
                 </li>
+                <li>
+                  <Nav>
+                <div class=" fs-5 mt-1 change-theme " id="darkBtn" onClick={changeTheme} style={{ cursor: 'pointer' }}>
+                {' '}
+                🌛
+              </div>
+              </Nav>
+                </li>
               </ul>
             ) : (
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -142,6 +150,14 @@ const Navbar = () => {
                   >
                     <strong>Logout</strong>
                   </NavLink>
+                </li>
+                <li>
+                  <Nav>
+                <div class=" fs-5 mt-1 change-theme " id="darkBtn" onClick={changeTheme} style={{ cursor: 'pointer' }}>
+                {' '}
+                🌛
+              </div>
+              </Nav>
                 </li>
               </ul>
             )}
