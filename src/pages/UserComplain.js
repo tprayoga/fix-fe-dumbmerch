@@ -4,6 +4,9 @@ import { io } from "socket.io-client";
 import ChatList from "../components/complains/ChatList";
 import ChatBody from "../components/complains/ChatBody";
 import { UserContext } from "../context/userContext";
+import { Container, Row, Col } from "react-bootstrap";
+import Navbar from "../components/navbar/Navbar";
+
 
 // initial variable outside component
 let socket;
@@ -186,19 +189,19 @@ const onSendMessage = (e) => {
   }
 };
   return (
-    <div>
-      <NavbarUser />
-      <div className="container">
-        <div className="row">
-          <div className="col">
+    <>
+      <Navbar />
+      <Container fluid style={{ height: "89.5vh" }}>
+        <Row>
+          <Col md={3} style={{ height: "89.5vh" }} className="px-3 border-end border-dark overflow-auto">
             <ChatList dataContact={contacts} clickContact={onClickContact} contact={contact} />
-          </div>
-          <div className="col">
+          </Col>
+          <Col md={9} style={{ maxHeight: "89.5vh" }} className="px-0">
             <ChatBody contact={contact} messages={messages} user={state.user} sendMessage={onSendMessage} />
-          </div>
-        </div>
-      </div>
-    </div>
+          </Col>
+        </Row>
+      </Container>
+      </>
   );
 }
 
