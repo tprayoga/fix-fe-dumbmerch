@@ -78,6 +78,13 @@ body {
   color: black !important;
 }
 
+.light-theme .sub-headline {
+  color: black !important;
+}
+.light-theme .nav-link {
+  color: black !important;
+}
+
 .tabel-transaction {
   background-color: #212529;
   color: white;
