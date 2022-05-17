@@ -50,7 +50,7 @@ function DetailProduct() {
     //change this to the script source you want to load, for example this is snap.js sandbox env
     const midtransScriptUrl = "https://app.sandbox.midtrans.com/snap/snap.js";
     //change this according to your client-key
-    const myMidtransClientKey = "SB-Mid-client--5l9_4MVdsoXpIQz";
+    const myMidtransClientKey = "SB-Mid-client-tSYDKI7sBrsbnWM8";
 
     let scriptTag = document.createElement("script");
     scriptTag.src = midtransScriptUrl;
